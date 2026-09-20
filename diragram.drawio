@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Page-1" id="zy8T-hxqBVCAUSsqXVol">
-        <mxGraphModel dx="1168" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="926" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -656,7 +656,7 @@
                         <mxPoint x="480" y="1345" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="E__8RH81O6Jxvlyc8y9z-231" value="BBSNet" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;" parent="1" vertex="1">
+                <mxCell id="E__8RH81O6Jxvlyc8y9z-231" value="InceptionV3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=20;" parent="1" vertex="1">
                     <mxGeometry x="180" y="1345" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="E__8RH81O6Jxvlyc8y9z-232" value="" style="group" parent="1" connectable="0" vertex="1">
@@ -806,7 +806,7 @@
                 <mxCell id="E__8RH81O6Jxvlyc8y9z-272" value="128 x 128 x 3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="60" y="1115" width="90" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="E__8RH81O6Jxvlyc8y9z-273" value="Optimizers = Adam | Learning rate = 0.001 | Batch Size = 128 | Epochs = 100&amp;nbsp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
+                <mxCell id="E__8RH81O6Jxvlyc8y9z-273" value="Optimizers = Adam | Learning rate = 0.001 | Batch Size = 50 | Epochs = 100&amp;nbsp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="20" y="1306" width="440" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="E__8RH81O6Jxvlyc8y9z-274" value="" style="group" parent="1" connectable="0" vertex="1">
@@ -1007,7 +1007,7 @@
                 <mxCell id="E__8RH81O6Jxvlyc8y9z-328" value="224 x 224x 3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="60" y="1470" width="90" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="E__8RH81O6Jxvlyc8y9z-329" value="Optimizers = Adam | Learning rate = 0.001 | Batch Size = 224 | Epochs = 100&amp;nbsp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
+                <mxCell id="E__8RH81O6Jxvlyc8y9z-329" value="Optimizers = Adam | Learning rate = 0.001 | Batch Size = 32 | Epochs = 100&amp;nbsp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="20" y="1661" width="440" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="E__8RH81O6Jxvlyc8y9z-330" value="" style="group" parent="1" connectable="0" vertex="1">
@@ -1154,7 +1154,7 @@
                 <mxCell id="E__8RH81O6Jxvlyc8y9z-384" value="224 x 224x 3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="60" y="1830" width="90" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="E__8RH81O6Jxvlyc8y9z-385" value="Optimizers = Adam | Learning rate = 0.001 | Batch Size = 128 | Epochs = 100&amp;nbsp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
+                <mxCell id="E__8RH81O6Jxvlyc8y9z-385" value="Optimizers = Adam | Learning rate = 0.001 | Batch Size = 32 | Epochs = 100&amp;nbsp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="20" y="2021" width="440" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="E__8RH81O6Jxvlyc8y9z-386" value="" style="group" parent="1" connectable="0" vertex="1">
