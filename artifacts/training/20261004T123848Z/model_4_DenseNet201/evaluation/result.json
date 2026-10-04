@@ -1,0 +1,68 @@
+{
+  "kind": "saved",
+  "file": "/mnt/e/MINT/Project-ML-Pork-Safely/artifacts/training/20261004T123848Z/model_4_DenseNet201/best_model.keras",
+  "status": "passed",
+  "tensorflow": "2.21.0",
+  "gpu": {
+    "compute_capability": [
+      8,
+      9
+    ],
+    "device_name": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  "class_names": [
+    "safe",
+    "unsafe"
+  ],
+  "image_preprocessing": "tf.image.decode_image(channels=3, expand_animations=False), tf.image.resize(method=bilinear, antialias=False); matches training",
+  "image_size": [
+    224,
+    224
+  ],
+  "parameters": 18353297,
+  "backbone": "densenet201",
+  "evaluation_batch_size": 16,
+  "test_count": 599,
+  "accuracy": 0.8597662771285476,
+  "confusion_matrix": [
+    [
+      218,
+      81
+    ],
+    [
+      3,
+      297
+    ]
+  ],
+  "classification_report": {
+    "safe": {
+      "precision": 0.9864253393665159,
+      "recall": 0.7290969899665551,
+      "f1-score": 0.8384615384615385,
+      "support": 299.0
+    },
+    "unsafe": {
+      "precision": 0.7857142857142857,
+      "recall": 0.99,
+      "f1-score": 0.8761061946902655,
+      "support": 300.0
+    },
+    "accuracy": 0.8597662771285476,
+    "macro avg": {
+      "precision": 0.8860698125404007,
+      "recall": 0.8595484949832776,
+      "f1-score": 0.8572838665759019,
+      "support": 599.0
+    },
+    "weighted avg": {
+      "precision": 0.885902274098287,
+      "recall": 0.8597662771285476,
+      "f1-score": 0.8573152894942899,
+      "support": 599.0
+    }
+  },
+  "binary_crossentropy": 0.6334856740390361,
+  "unseen_count": 10,
+  "scope": "Saved weights, compile=False, all test images in fixed order, threshold >0.5, 10 unlabeled unseen images",
+  "seconds": 30.39
+}
