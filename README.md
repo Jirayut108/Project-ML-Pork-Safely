@@ -56,6 +56,28 @@ python tools/predict.py --model 3 --device cpu --input "/path/to/images" --outpu
 
 โมเดลย่อภาพเป็น 256×256 สำหรับ ResNet50V2, 128×128 สำหรับ InceptionV3 และ 224×224 สำหรับ MobileNetV2/DenseNet201 ด้วย TensorFlow bilinear resize การหาร 255 อยู่ในโมเดลแล้ว จึงไม่ต้องหารซ้ำ ผลตัวเลขอาจคลาดเคลื่อนเล็กน้อยตามอุปกรณ์และ batch size
 
+## ไฟล์ `.h5` สำหรับโมเดล 2–4
+
+ไฟล์เหล่านี้แปลงจาก `best_model.keras` ของรอบ `20261004T123848Z` โดยเก็บโครงสร้างและน้ำหนักที่ฝึกแล้วครบ เหมาะสำหรับโหลดทำนาย ไม่ได้เก็บสถานะ optimizer สำหรับฝึกต่อ:
+
+| โมเดล | ไฟล์ | ขนาดภาพเข้า |
+|---|---|---|
+| 2: InceptionV3 | [model2_InceptionV3.h5](model2_InceptionV3.h5) | 128×128 |
+| 3: MobileNetV2 | [model3_MobileNetV2.h5](model3_MobileNetV2.h5) | 224×224 |
+| 4: DenseNet201 | [model4_DenseNet201.h5](model4_DenseNet201.h5) | 224×224 |
+
+ดาวน์โหลดไฟล์จริงด้วย `git lfs pull` แล้วโหลดได้ด้วย:
+
+```python
+import tensorflow as tf
+
+model = tf.keras.models.load_model("model2_InceptionV3.h5", compile=False)
+```
+
+ใช้ภาพ RGB ช่วงค่า 0–255 และย่อด้วย TensorFlow bilinear resize ตามขนาดของแต่ละโมเดล การหาร 255 อยู่ในโมเดลแล้ว ผลลัพธ์เป็นคะแนน `unsafe` โดยใช้ค่า > 0.5 เป็นคลาส `unsafe`
+
+ตรวจสอบด้วย TensorFlow 2.21.0 โดยโหลด `.h5` กลับ ตรวจน้ำหนักทุกตัวว่าเท่ากับต้นฉบับ และเปรียบเทียบผลทำนายภาพ unseen ทั้ง 10 ภาพ ดู [ผลตรวจสอบการแปลง](artifacts/training/20261004T123848Z/h5-export-verification.json)
+
 ## ฝึกและตรวจสอบใหม่
 
 ```bash
@@ -93,6 +115,7 @@ python tools/test_models.py --worker saved \
 
 - `tools/`: ตัวฝึก ตัวประเมิน ตัวทำนาย และตัวสร้างรายงาน
 - `models.json`: พาธโมเดล ขนาดภาพ และผลทดสอบ
+- `model2_InceptionV3.h5`, `model3_MobileNetV2.h5`, `model4_DenseNet201.h5`: โมเดล 2–4 ในรูปแบบ HDF5 สำหรับโหลดทำนาย
 - `requirements-ml.txt` และ `requirements-ml-lock.txt`: dependency หลักและเวอร์ชัน environment ที่ใช้ทดสอบ
 - `artifacts/training/20261004T123848Z/`: best_model.keras ทั้งสี่ตัว ประวัติการฝึก รายงาน กราฟ และผลทำนายรายภาพ
 
