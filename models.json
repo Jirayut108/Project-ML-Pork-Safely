@@ -1,0 +1,51 @@
+{
+  "run": "20261004T123848Z",
+  "class_names": [
+    "safe",
+    "unsafe"
+  ],
+  "threshold": 0.5,
+  "preprocessing": "RGB decode and TensorFlow bilinear resize; input 0..255, Rescaling(1/255) is already inside the saved model",
+  "models": {
+    "1": {
+      "name": "ResNet50V2 (Adam)",
+      "path": "artifacts/training/20261004T123848Z/model_1_ResNet50V2(Adam)/best_model.keras",
+      "input_size": [
+        256,
+        256
+      ],
+      "test_accuracy": 0.8196994991652755,
+      "unsafe_false_negatives": 3
+    },
+    "2": {
+      "name": "InceptionV3",
+      "path": "artifacts/training/20261004T123848Z/model_2_InceptionV3/best_model.keras",
+      "input_size": [
+        128,
+        128
+      ],
+      "test_accuracy": 0.8480801335559266,
+      "unsafe_false_negatives": 7
+    },
+    "3": {
+      "name": "MobileNetV2",
+      "path": "artifacts/training/20261004T123848Z/model_3_MobileNetV2/best_model.keras",
+      "input_size": [
+        224,
+        224
+      ],
+      "test_accuracy": 0.7896494156928213,
+      "unsafe_false_negatives": 1
+    },
+    "4": {
+      "name": "DenseNet201",
+      "path": "artifacts/training/20261004T123848Z/model_4_DenseNet201/best_model.keras",
+      "input_size": [
+        224,
+        224
+      ],
+      "test_accuracy": 0.8597662771285476,
+      "unsafe_false_negatives": 3
+    }
+  }
+}

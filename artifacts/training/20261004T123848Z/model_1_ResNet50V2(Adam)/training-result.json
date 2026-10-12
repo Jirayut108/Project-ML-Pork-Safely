@@ -1,0 +1,75 @@
+{
+  "file": "model_1_ResNet50V2(Adam).ipynb",
+  "status": "trained",
+  "max_epochs_per_phase": 100,
+  "patience": 10,
+  "gpu": {
+    "compute_capability": [
+      8,
+      9
+    ],
+    "device_name": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  "tensorflow": "2.21.0",
+  "image_size": [
+    256,
+    256
+  ],
+  "batch_size": 50,
+  "seed": 42,
+  "changes_from_notebook": [
+    "Project-relative dataset and output paths",
+    "EarlyStopping on val_loss, patience=10, restore_best_weights=True",
+    "Independent checkpoints for every model and phase",
+    "Reload best head weights before fine-tuning",
+    "Select final checkpoint by validation loss, evaluate fixed-order test set afterward",
+    "Cache resized datasets in memory; shuffle training samples each epoch"
+  ],
+  "dataset": {
+    "train set": {
+      "safe": 1050,
+      "unsafe": 1050
+    },
+    "valid set": {
+      "safe": 150,
+      "unsafe": 150
+    },
+    "test set": {
+      "safe": 299,
+      "unsafe": 300
+    }
+  },
+  "parameters": 23598161,
+  "backbone": "resnet50v2",
+  "phases": [
+    {
+      "phase": "head",
+      "epochs": 92,
+      "best_epoch": 82,
+      "optimizer": "Adam",
+      "learning_rate": 9.999999747378752e-05,
+      "trainable_parameters": 33297,
+      "validation": {
+        "accuracy": 0.9700000286102295,
+        "loss": 0.31271421909332275
+      },
+      "model_file": "artifacts/training/20261004T123848Z/model_1_ResNet50V2(Adam)/head-best.keras"
+    },
+    {
+      "phase": "fine_tune",
+      "epochs": 25,
+      "best_epoch": 15,
+      "optimizer": "Adam",
+      "learning_rate": 9.999999747378752e-05,
+      "trainable_parameters": 19474961,
+      "validation": {
+        "accuracy": 0.9733333587646484,
+        "loss": 0.2927669882774353
+      },
+      "model_file": "artifacts/training/20261004T123848Z/model_1_ResNet50V2(Adam)/fine_tune-best.keras"
+    }
+  ],
+  "selected_phase": "fine_tune",
+  "best_model": "artifacts/training/20261004T123848Z/model_1_ResNet50V2(Adam)/best_model.keras",
+  "seconds": 433.67
+}

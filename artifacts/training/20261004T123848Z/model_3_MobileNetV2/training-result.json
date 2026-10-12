@@ -1,0 +1,75 @@
+{
+  "file": "model_3_MobileNetV2.ipynb",
+  "status": "trained",
+  "max_epochs_per_phase": 100,
+  "patience": 10,
+  "gpu": {
+    "compute_capability": [
+      8,
+      9
+    ],
+    "device_name": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  "tensorflow": "2.21.0",
+  "image_size": [
+    224,
+    224
+  ],
+  "batch_size": 32,
+  "seed": 42,
+  "changes_from_notebook": [
+    "Project-relative dataset and output paths",
+    "EarlyStopping on val_loss, patience=10, restore_best_weights=True",
+    "Independent checkpoints for every model and phase",
+    "Reload best head weights before fine-tuning",
+    "Select final checkpoint by validation loss, evaluate fixed-order test set afterward",
+    "Cache resized datasets in memory; shuffle training samples each epoch"
+  ],
+  "dataset": {
+    "train set": {
+      "safe": 1050,
+      "unsafe": 1050
+    },
+    "valid set": {
+      "safe": 150,
+      "unsafe": 150
+    },
+    "test set": {
+      "safe": 299,
+      "unsafe": 300
+    }
+  },
+  "parameters": 2279057,
+  "backbone": "mobilenetv2_1.00_224",
+  "phases": [
+    {
+      "phase": "head",
+      "epochs": 14,
+      "best_epoch": 4,
+      "optimizer": "Adam",
+      "learning_rate": 0.0010000000474974513,
+      "trainable_parameters": 21009,
+      "validation": {
+        "accuracy": 0.9200000166893005,
+        "loss": 0.22163325548171997
+      },
+      "model_file": "/mnt/e/MINT/Project-ML-Pork-Safely/artifacts/training/20261004T123848Z/model_3_MobileNetV2/head-best.keras"
+    },
+    {
+      "phase": "fine_tune",
+      "epochs": 18,
+      "best_epoch": 8,
+      "optimizer": "Adam",
+      "learning_rate": 0.0010000000474974513,
+      "trainable_parameters": 1882449,
+      "validation": {
+        "accuracy": 0.9666666388511658,
+        "loss": 0.12920771539211273
+      },
+      "model_file": "/mnt/e/MINT/Project-ML-Pork-Safely/artifacts/training/20261004T123848Z/model_3_MobileNetV2/fine_tune-best.keras"
+    }
+  ],
+  "selected_phase": "fine_tune",
+  "best_model": "/mnt/e/MINT/Project-ML-Pork-Safely/artifacts/training/20261004T123848Z/model_3_MobileNetV2/best_model.keras",
+  "seconds": 136.43
+}
