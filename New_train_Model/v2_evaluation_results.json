@@ -1,0 +1,152 @@
+[
+  {
+    "key": "DenseNet201",
+    "file": "model4_DenseNet201_v2.keras",
+    "file_size_mb": 73.04,
+    "latency_ms": 172.1,
+    "accuracy": 0.95,
+    "cm": [
+      [
+        284,
+        16
+      ],
+      [
+        14,
+        286
+      ]
+    ],
+    "safe_precision": 0.953,
+    "safe_recall": 0.9467,
+    "safe_f1": 0.9498,
+    "unsafe_precision": 0.947,
+    "unsafe_recall": 0.9533,
+    "unsafe_f1": 0.9502,
+    "white_plate_res": "unsafe (ไม่ปลอดภัย) (99.21%)",
+    "white_plate_prob": 0.9921
+  },
+  {
+    "key": "MobileNetV2",
+    "file": "model3_MobileNetV2_v2.keras",
+    "file_size_mb": 9.7,
+    "latency_ms": 33.17,
+    "accuracy": 0.7567,
+    "cm": [
+      [
+        285,
+        15
+      ],
+      [
+        131,
+        169
+      ]
+    ],
+    "safe_precision": 0.6851,
+    "safe_recall": 0.95,
+    "safe_f1": 0.7961,
+    "unsafe_precision": 0.9185,
+    "unsafe_recall": 0.5633,
+    "unsafe_f1": 0.6983,
+    "white_plate_res": "unsafe (ไม่ปลอดภัย) (97.10%)",
+    "white_plate_prob": 0.971
+  },
+  {
+    "key": "ResNet50V2 (Adam)",
+    "file": "model1_ResNet50V2_Adam_v2.keras",
+    "file_size_mb": 91.35,
+    "latency_ms": 85.9,
+    "accuracy": 0.9517,
+    "cm": [
+      [
+        281,
+        19
+      ],
+      [
+        10,
+        290
+      ]
+    ],
+    "safe_precision": 0.9656,
+    "safe_recall": 0.9367,
+    "safe_f1": 0.9509,
+    "unsafe_precision": 0.9385,
+    "unsafe_recall": 0.9667,
+    "unsafe_f1": 0.9524,
+    "white_plate_res": "unsafe (ไม่ปลอดภัย) (98.38%)",
+    "white_plate_prob": 0.9838
+  },
+  {
+    "key": "VGG19",
+    "file": "model1_VGG19_v2.keras",
+    "file_size_mb": 76.73,
+    "latency_ms": 84.45,
+    "accuracy": 0.8183,
+    "cm": [
+      [
+        232,
+        68
+      ],
+      [
+        41,
+        259
+      ]
+    ],
+    "safe_precision": 0.8498,
+    "safe_recall": 0.7733,
+    "safe_f1": 0.8098,
+    "unsafe_precision": 0.792,
+    "unsafe_recall": 0.8633,
+    "unsafe_f1": 0.8262,
+    "white_plate_res": "unsafe (ไม่ปลอดภัย) (98.13%)",
+    "white_plate_prob": 0.9813
+  },
+  {
+    "key": "ResNet50V2 (RMSprop)",
+    "file": "model1_ResNet50V2_RMSprop_v2.keras",
+    "file_size_mb": 91.09,
+    "latency_ms": 87.52,
+    "accuracy": 0.9483,
+    "cm": [
+      [
+        285,
+        15
+      ],
+      [
+        16,
+        284
+      ]
+    ],
+    "safe_precision": 0.9468,
+    "safe_recall": 0.95,
+    "safe_f1": 0.9484,
+    "unsafe_precision": 0.9498,
+    "unsafe_recall": 0.9467,
+    "unsafe_f1": 0.9482,
+    "white_plate_res": "unsafe (ไม่ปลอดภัย) (99.98%)",
+    "white_plate_prob": 0.9998
+  },
+  {
+    "key": "InceptionV3",
+    "file": "model2_InceptionV3_v2.keras",
+    "file_size_mb": 85.03,
+    "latency_ms": 26.89,
+    "accuracy": 0.7517,
+    "cm": [
+      [
+        242,
+        58
+      ],
+      [
+        91,
+        209
+      ]
+    ],
+    "safe_precision": 0.7267,
+    "safe_recall": 0.8067,
+    "safe_f1": 0.7646,
+    "unsafe_precision": 0.7828,
+    "unsafe_recall": 0.6967,
+    "unsafe_f1": 0.7372,
+    "white_plate_res": "unsafe (ไม่ปลอดภัย) (86.07%)",
+    "white_plate_prob": 0.8607
+  }
+]

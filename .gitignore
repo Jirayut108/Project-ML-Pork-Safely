@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# Streamlit cache
+.streamlit/secrets.toml
+
+# Backup and multipage files (Deploy as single-page app)
+app_multipage_backup.py
+pages/
+
+# New Train Models: Keep only Champion model for Streamlit Cloud deployment
+New_train_Model/*
+!New_train_Model/model4_DenseNet201_v2.keras
+!New_train_Model/v2_evaluation_results.json
