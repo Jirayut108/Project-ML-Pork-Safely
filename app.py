@@ -550,9 +550,9 @@ if st.session_state.analyzed_results is not None:
             if res["is_unsafe"]:
                 st.markdown(f"""
                 <div class="result-card-unsafe">
-                    <span class="unsafe-badge">เนื้อเริ่มเน่าเสีย (ไม่ควรบริโภค)</span>
+                    <span class="unsafe-badge">Unsafe (ไม่ปลอดภัย)</span>
                     <div style="font-size: 1.35rem; font-weight: 800; color: #991B1B; margin: 10px 0 6px 0;">
-                        เนื้อหมูเริ่มเน่าเสีย ไม่ปลอดภัยต่อการบริโภค
+                        Unsafe : เนื้อหมูไม่ปลอดภัยต่อการบริโภค
                     </div>
                     <div style="font-size: 0.95rem; color: #450A0A; line-height: 1.55;">
                         ระดับความมั่นใจ: <b>{res['confidence']:.2f}%</b><br>
@@ -564,9 +564,9 @@ if st.session_state.analyzed_results is not None:
             else:
                 st.markdown(f"""
                 <div class="result-card-safe">
-                    <span class="safe-badge">สดตามเกณฑ์สี (พร้อมปรุงสุก)</span>
+                    <span class="safe-badge">Safe (ปลอดภัย)</span>
                     <div style="font-size: 1.35rem; font-weight: 800; color: #166534; margin: 10px 0 6px 0;">
-                        เนื้อหมูสดตามเกณฑ์สี ไม่พบการเน่าเสีย
+                        Safe : เนื้อหมูสด ปลอดภัยต่อการบริโภค
                     </div>
                     <div style="font-size: 0.95rem; color: #052E16; line-height: 1.55;">
                         ระดับความมั่นใจ: <b>{res['confidence']:.2f}%</b><br>
@@ -579,10 +579,10 @@ if st.session_state.analyzed_results is not None:
             st.markdown("**การกระจายค่าน้ำหนักความน่าจะเป็น:**")
             p1, p2 = st.columns(2)
             with p1:
-                st.metric("ความสดตามเกณฑ์สี (Freshness)", f"{res['prob_safe']*100:.2f}%")
+                st.metric("โอกาสปลอดภัย Safe (Freshness)", f"{res['prob_safe']*100:.2f}%")
                 st.progress(res["prob_safe"])
             with p2:
-                st.metric("ความเสี่ยงเน่าเสีย (Spoilage Risk)", f"{res['prob_unsafe']*100:.2f}%")
+                st.metric("ความเสี่ยงไม่ปลอดภัย Unsafe (Spoilage)", f"{res['prob_unsafe']*100:.2f}%")
                 st.progress(res["prob_unsafe"])
                 
             # การ์ดรายละเอียดทางเทคนิค
@@ -625,13 +625,13 @@ if st.session_state.analyzed_results is not None:
             f'<div class="stat-card-progress"><div class="stat-card-fill" style="width: 100%;"></div></div>'
             f'</div>'
             f'<div class="stat-card safe">'
-            f'<div class="stat-card-label"><span>&bull;</span> สดตามเกณฑ์สี</div>'
+            f'<div class="stat-card-label"><span>&bull;</span> Safe (ปลอดภัย)</div>'
             f'<div class="stat-card-value">{safe_count}<span class="stat-card-unit">ภาพ</span></div>'
             f'<div class="stat-card-sub">{safe_pct:.1f}% ของทั้งหมด</div>'
             f'<div class="stat-card-progress"><div class="stat-card-fill" style="width: {safe_pct:.1f}%;"></div></div>'
             f'</div>'
             f'<div class="stat-card unsafe">'
-            f'<div class="stat-card-label"><span>&bull;</span> เริ่มเน่าเสีย</div>'
+            f'<div class="stat-card-label"><span>&bull;</span> Unsafe (ไม่ปลอดภัย)</div>'
             f'<div class="stat-card-value">{unsafe_count}<span class="stat-card-unit">ภาพ</span></div>'
             f'<div class="stat-card-sub">{unsafe_pct:.1f}% ของทั้งหมด</div>'
             f'<div class="stat-card-progress"><div class="stat-card-fill" style="width: {unsafe_pct:.1f}%;"></div></div>'
@@ -660,7 +660,7 @@ if st.session_state.analyzed_results is not None:
                                 if r["is_unsafe"]:
                                     st.markdown(
                                         f'<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">'
-                                        f'<span class="unsafe-badge">เริ่มเน่าเสีย ({r["confidence"]:.1f}%)</span>'
+                                        f'<span class="unsafe-badge">Unsafe ({r["confidence"]:.1f}%)</span>'
                                         f'<span style="font-size: 0.75rem; font-weight: 600; color: #DC2626;">เสี่ยง {r["prob_unsafe"]*100:.0f}%</span>'
                                         f'</div>',
                                         unsafe_allow_html=True
@@ -668,7 +668,7 @@ if st.session_state.analyzed_results is not None:
                                 else:
                                     st.markdown(
                                         f'<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">'
-                                        f'<span class="safe-badge">สดตามเกณฑ์ ({r["confidence"]:.1f}%)</span>'
+                                        f'<span class="safe-badge">Safe ({r["confidence"]:.1f}%)</span>'
                                         f'<span style="font-size: 0.75rem; font-weight: 600; color: #16A34A;">สด {r["prob_safe"]*100:.0f}%</span>'
                                         f'</div>',
                                         unsafe_allow_html=True
@@ -691,7 +691,7 @@ if st.session_state.analyzed_results is not None:
                 table_data.append({
                     "ลำดับ": idx,
                     "ชื่อไฟล์": r["filename"],
-                    "ผลการประเมิน": "เนื้อเริ่มเน่าเสีย (ไม่ควรบริโภค)" if r["is_unsafe"] else "สดตามเกณฑ์สี (พร้อมปรุงสุก)",
+                    "ผลการประเมิน": "Unsafe (ไม่ปลอดภัย)" if r["is_unsafe"] else "Safe (ปลอดภัย)",
                     "ความมั่นใจ": f"{r['confidence']:.1f}%",
                     "ความสด (Freshness)": f"{r['prob_safe']*100:.1f}%",
                     "ความเสี่ยงเน่า (Spoilage)": f"{r['prob_unsafe']*100:.1f}%",
